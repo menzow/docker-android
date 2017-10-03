@@ -1,0 +1,6 @@
+tools
+platform-tools
+extras;android;m2repository
+extras;google;google_play_services
+platforms;android-26
+build-tools;26.0.1
