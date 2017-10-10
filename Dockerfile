@@ -1,6 +1,11 @@
 FROM java:openjdk-8-jdk
 MAINTAINER hello@menzo.io
 
+ENV CLOUDSDK_CORE_DISABLE_PROMPTS 1
+ENV SDK_VERSION 127.0.0
+ENV SDK_FILENAME google-cloud-sdk-${SDK_VERSION}-linux-x86_64.tar.gz
+
+
 ENV JAVA8_HOME /usr/lib/jvm/default-jvm
 ENV JAVA_HOME $JAVA8_HOME
 
@@ -18,3 +23,5 @@ ADD packages.txt /root/packages.txt
 ADD build.sh /root/build.sh
 
 RUN /bin/bash /root/build.sh
+
+ENV PATH $PATH:$HOME/google-cloud-sdk/bin

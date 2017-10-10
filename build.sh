@@ -11,3 +11,8 @@ if [ -f /root/packages.txt ] && [ ! -z "$(cat /root/packages.txt | sed -r 's/^\n
 	then
 		yes | $ANDROID_HOME/tools/bin/sdkmanager --include_obsolete `cat /root/packages.txt | tr "\n" " "`;
 fi
+
+curl -O -J https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/${SDK_FILENAME}
+tar -zxvf ${SDK_FILENAME} --directory ${HOME}
+rm ${SDK_FILENAME}
+
