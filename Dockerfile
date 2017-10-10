@@ -24,4 +24,4 @@ ADD build.sh /root/build.sh
 
 RUN /bin/bash /root/build.sh
 
-ENV PATH $PATH:$HOME/google-cloud-sdk/bin
+ENV PATH $PATH:/root/google-cloud-sdk/bin
